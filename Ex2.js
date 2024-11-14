@@ -7,7 +7,7 @@ const datasource = [
             {key: 'I'},
             {key: 'O'},
             {key: 'U'},
-        ], title: 'Vowels', bgColor: 'skyblue'},
+        ], title: 'Vowels'},
     {data: [
             {key: 'B'},
             {key: 'C'},
@@ -30,7 +30,7 @@ const datasource = [
             {key: 'X'},
             {key: 'Y'},
             {key: 'Z'}
-        ], title: 'Consonants', bgColor: 'khaki'},
+        ], title: 'Consonants'},
 ]
 
 export default function App() {
@@ -45,15 +45,9 @@ export default function App() {
     return (
         <View style={styles.container}>
             <SectionList
-                contentContainerStyle={{padding: 10}}
                 sections={datasource}
                 renderItem={renderItem}
-                renderSectionHeader={
-                    ({section: {title, bgColor}}) =>
-                        (<Text style={[styles.headerText, {backgroundColor: bgColor}]}>
-                            {title}
-                        </Text>)}
-            />
+                renderSectionHeader={({section: {title}}) => (<Text style={styles.headerText}>{title}</Text>)}/>
         </View>
     );
 }
@@ -77,7 +71,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         margin: 10,
         textAlign: 'center',
-        fontWeight: 'bold',
+        fontWeight: 'bold'
     }
 });
 
